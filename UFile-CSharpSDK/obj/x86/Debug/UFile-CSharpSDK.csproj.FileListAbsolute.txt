@@ -1,0 +1,14 @@
+C:\Users\cheneydeng\ucloud\ufile-sdk\csharp\UFile-CSharpSDK\bin\Debug\UFile-CSharpSDK.exe
+C:\Users\cheneydeng\ucloud\ufile-sdk\csharp\UFile-CSharpSDK\bin\Debug\UFile-CSharpSDK.pdb
+C:\Users\cheneydeng\ucloud\ufile-sdk\csharp\UFile-CSharpSDK\bin\Debug\Newtonsoft.Json.dll
+C:\Users\cheneydeng\ucloud\ufile-sdk\csharp\UFile-CSharpSDK\bin\Debug\Newtonsoft.Json.xml
+C:\Users\cheneydeng\ucloud\ufile-sdk\csharp\UFile-CSharpSDK\obj\x86\Debug\UFile-CSharpSDK.csprojResolveAssemblyReference.cache
+C:\Users\cheneydeng\ucloud\ufile-sdk\csharp\UFile-CSharpSDK\obj\x86\Debug\UFile-CSharpSDK.exe
+C:\Users\cheneydeng\ucloud\ufile-sdk\csharp\UFile-CSharpSDK\obj\x86\Debug\UFile-CSharpSDK.pdb
+C:\Users\Administrator.USER-20150114TY\Desktop\csharp_sdk_new\csharp_sdk\UFile-CSharpSDK\obj\x86\Debug\UFile-CSharpSDK.exe
+C:\Users\Administrator.USER-20150114TY\Desktop\csharp_sdk_new\csharp_sdk\UFile-CSharpSDK\obj\x86\Debug\UFile-CSharpSDK.pdb
+C:\Users\Administrator.USER-20150114TY\Desktop\csharp_sdk_new\csharp_sdk\UFile-CSharpSDK\bin\Debug\UFile-CSharpSDK.exe
+C:\Users\Administrator.USER-20150114TY\Desktop\csharp_sdk_new\csharp_sdk\UFile-CSharpSDK\bin\Debug\UFile-CSharpSDK.pdb
+C:\Users\Administrator.USER-20150114TY\Desktop\csharp_sdk_new\csharp_sdk\UFile-CSharpSDK\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator.USER-20150114TY\Desktop\csharp_sdk_new\csharp_sdk\UFile-CSharpSDK\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Administrator.USER-20150114TY\Desktop\csharp_sdk_new\csharp_sdk\UFile-CSharpSDK\obj\x86\Debug\UFile-CSharpSDK.csprojResolveAssemblyReference.cache
