@@ -25,7 +25,7 @@ namespace UFileCSharpSDK
             {
                 //demo for getting file
                 Console.WriteLine("downloading...please wait");
-                FileStream stream = new FileStream(saveFile, FileMode.CreateNew| FileMode.Truncate);
+                FileStream stream = new FileStream(saveFile, FileMode.Create);
                 Proxy.GetFile(bucket, key, stream);
                 stream.Close();
                 Console.WriteLine(string.Format("get {0} {1} success", bucket, key));
