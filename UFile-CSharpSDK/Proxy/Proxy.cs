@@ -339,8 +339,14 @@ namespace UFileCSharpSDK
                     StreamWriter sw = new StreamWriter(ms);
                     for (int idx = 0; idx < m_etags.Count; ++idx)
                     {
-                        sw.Write(m_etags[idx] + ",");
+                        if (idx != m_etags.Count - 1) {
+                            sw.Write(m_etags[idx] + ",");
+                        }
+                        else{
+                            sw.Write(m_etags[idx]);
+                        }
                     }
+
                     sw.Flush();
                     ms.Position = 0;
                     Utils.Copy(request.GetRequestStream(), ms);

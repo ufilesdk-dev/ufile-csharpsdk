@@ -8,9 +8,10 @@ namespace UFileCSharpSDK
 		public static string VERSION = @"1.0.2";
 
 		/// <summary>
-		/// UCloud管理服务器地址后缀
+		/// UCloud管理服务器地址后缀; 按bucket 的地域去对应配置
+		/// 各个地域配置，参考：https://docs.ucloud.cn/ufile/tools/tools/tools_file
 		/// </summary>
-		public static string UCLOUD_PROXY_SUFFIX = @".ufile.ucloud.cn";
+		public static string UCLOUD_PROXY_SUFFIX = @".cn-bj.ufileos.com";
 
 		/// <summary>
 		/// UCloud提供的公钥
