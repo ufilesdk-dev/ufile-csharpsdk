@@ -93,7 +93,8 @@ namespace UFileCSharpSDK
             HttpWebResponse response = null;
             try
             {
-                request = (HttpWebRequest)WebRequest.Create(Utils.GetURL(bucket, key));
+                string url = Utils.GetURL(bucket, key);
+                request = (HttpWebRequest)WebRequest.Create(url);
                 request.KeepAlive = false;
                 Utils.SetHeaders(request, file, bucket, key, "PUT");
                 Utils.CopyFile(request, file);
@@ -378,16 +379,17 @@ namespace UFileCSharpSDK
                 return last_part == m_part_number;
             }
 
-            private string URL(PROCESS_TYPE type) { 
-                switch(type) {
+            private string URL(PROCESS_TYPE type) {
+                string encodedKey = System.Web.HttpUtility.UrlEncode(m_key);
+                switch (type) {
                     case PROCESS_TYPE.MINIT:
-                        return string.Format("http://{0}{1}/{2}?uploads", m_bucket, Config.UCLOUD_PROXY_SUFFIX, m_key);
+                        return string.Format("http://{0}{1}/{2}?uploads", m_bucket, Config.UCLOUD_PROXY_SUFFIX, encodedKey);
                     case PROCESS_TYPE.MUPLOAD:
-                        return string.Format("http://{0}{1}/{2}?uploadId={3}&partNumber={4}", m_bucket, Config.UCLOUD_PROXY_SUFFIX, m_key, m_uploadid, m_part_number);
+                        return string.Format("http://{0}{1}/{2}?uploadId={3}&partNumber={4}", m_bucket, Config.UCLOUD_PROXY_SUFFIX, encodedKey, m_uploadid, m_part_number);
                     case PROCESS_TYPE.MFINISH:
-                        return string.Format("http://{0}{1}/{2}?uploadId={3}", m_bucket, Config.UCLOUD_PROXY_SUFFIX, m_key, m_uploadid);
+                        return string.Format("http://{0}{1}/{2}?uploadId={3}", m_bucket, Config.UCLOUD_PROXY_SUFFIX, encodedKey, m_uploadid);
                     case PROCESS_TYPE.MCANCEL: return "";
-                        return string.Format("http://{0}{1}/{2}?uploadId={3}", m_bucket, Config.UCLOUD_PROXY_SUFFIX, m_key, m_uploadid);
+                        return string.Format("http://{0}{1}/{2}?uploadId={3}", m_bucket, Config.UCLOUD_PROXY_SUFFIX, encodedKey, m_uploadid);
                     default:
                         throw new Exception("invalid url type for multiuploader");
                 }
