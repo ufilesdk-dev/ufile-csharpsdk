@@ -50,7 +50,8 @@ namespace UFileCSharpSDK
 		}
 		public static string GetURL(string bucket, string key) 
 		{
-			return @"http://" + bucket + Config.UCLOUD_PROXY_SUFFIX + (key == string.Empty ? "" : (@"/" + key));
+			string encodedKey = System.Web.HttpUtility.UrlEncode(key);
+			return @"http://" + bucket + Config.UCLOUD_PROXY_SUFFIX + (encodedKey == string.Empty ? "" : (@"/" + encodedKey));
 		}
 		public static string GetMD5(string file, Int64 offset, Int64 size)
         {
