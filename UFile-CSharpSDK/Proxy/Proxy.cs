@@ -381,6 +381,7 @@ namespace UFileCSharpSDK
 
             private string URL(PROCESS_TYPE type) {
                 string encodedKey = System.Web.HttpUtility.UrlEncode(m_key);
+                encodedKey = encodedKey.Replace("+", "%20");
                 switch (type) {
                     case PROCESS_TYPE.MINIT:
                         return string.Format("http://{0}{1}/{2}?uploads", m_bucket, Config.UCLOUD_PROXY_SUFFIX, encodedKey);
