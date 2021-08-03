@@ -4,6 +4,7 @@ using System.IO;
 using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization.Json;
+using System.Threading;
 
 namespace UFileCSharpSDK
 {
@@ -268,9 +269,9 @@ namespace UFileCSharpSDK
 
                     long parts_uploaded = 0;
                     bool finished = false;
+                    int retry_count = 3, i = 0;
                     while (true)
                     {
-
                         if (finished || (total_parts_upload != -1 && parts_uploaded >= total_parts_upload)) break;
 
                         string url = URL(PROCESS_TYPE.MUPLOAD);
@@ -298,8 +299,20 @@ namespace UFileCSharpSDK
 
                         if (response.StatusCode != HttpStatusCode.OK)
                         {
-                            string e = UFileErrorSerializer.FormatString(body);
-                            throw new Exception(string.Format("{0} {1}", response.StatusDescription, e));
+                            if (i < retry_count - 1)
+                            {
+                                finished = false;
+                                response.Close();
+                                i += 1;
+                                Thread.Sleep(1000);
+                                continue;
+                            }
+                            else
+                            {
+                                finished = true;
+                                string e = UFileErrorSerializer.FormatString(body);
+                                throw new Exception(string.Format("{0} {1}", response.StatusDescription, e));
+                            }
                         }
                         else
                         {
