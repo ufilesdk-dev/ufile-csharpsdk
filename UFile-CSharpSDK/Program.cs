@@ -49,6 +49,18 @@ namespace UFileCSharpSDK
             }
 
             {
+                //demo for multi uploading file, check etag
+                Console.WriteLine("uploading...please wait");
+                Proxy.MultiUploader muploader = new Proxy.MultiUploader(bucket, key, originFile);
+                string local_etag = Utils.CalcEtag(originFile);
+                muploader.MInit();
+                muploader.MUpload(-1);
+                muploader.CheckEtag(local_etag, originFile);
+                muploader.MFinish();
+                Console.WriteLine(string.Format("mupload {0} {1} success", bucket, key));
+            }
+
+            {
                 //demo for multi uploading file manually
                 Console.WriteLine("uploading...please wait");
                 Proxy.MultiUploader muploader = new Proxy.MultiUploader(bucket, key, originFile);
