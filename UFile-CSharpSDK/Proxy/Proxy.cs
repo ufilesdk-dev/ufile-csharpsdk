@@ -337,6 +337,31 @@ namespace UFileCSharpSDK
                 }
             }
 
+            public void CheckEtag(string local_etag_1st, string file)
+            {
+                string local_etag_2nd = Utils.CalcEtag(file);
+
+                string remote_etag = Utils.EtagByEtags(m_etags);
+
+                try
+                {
+                    if (local_etag_1st != local_etag_2nd)
+                    {
+                        throw new Exception(string.Format("local_etag_1st {0} != local_etag_2nd {1}", local_etag_1st, local_etag_2nd));
+                    }
+
+                    if (local_etag_1st != remote_etag)
+                    {
+                        throw new Exception(string.Format("local_etag {0} != remote_etag {1}", local_etag_1st, remote_etag));
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                    throw;
+                }
+            }
+
             public void MFinish() {
 
                 HttpWebRequest request = null;
