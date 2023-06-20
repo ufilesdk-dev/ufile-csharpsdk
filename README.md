@@ -1,4 +1,12 @@
-例子程序：UFile-CSharpSDK\Program.cs   
-配置文件：UFile-CSharpSDK\Conf\Config.cs   
-各个地域的域名：https://docs.ucloud.cn/ufile/tools/tools/tools_file   
-  
+# UCloud US3 C# SDK
+
+C# SDK for UCloud US3 (原名UFile 对象存储服务)
+
+## 示例
+UFile-CSharpSDK\Program.cs    
+
+## 配置文件
+UFile-CSharpSDK\Conf\Config.cs    
+     
+## 许可证
+[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.html)      
